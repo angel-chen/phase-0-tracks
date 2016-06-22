@@ -13,3 +13,5 @@ A commit is a save point for the project you are working on. A good commit messa
 
 * What is a merge conflict?
 A merge conflict is when two branches change the same file and try to merge them together.
+
+This is for Release 2 and tagging the teaching staff at Dev Bootcamp.
