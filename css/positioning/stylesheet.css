@@ -1,0 +1,30 @@
+body {
+	margin:0px;
+}
+
+#octofashion, .hat, .glasses, .octopus {
+	position:absolute;
+}
+
+#octofashion{
+	width: 276px;
+	height: 400px;
+	top: 50%;
+	left: 50%;
+	margin-left: -138px;
+	margin-top: -200px;
+}
+
+.hat {
+	z-index:2;
+}
+
+.glasses {
+	z-index:1;
+	padding: 160px 0 0 60px;
+}
+
+.octopus {
+	z-index: 0;
+	padding: 60px 0 0 20px;
+}
