@@ -13,3 +13,14 @@ section.job{
 ul.accomplish{
 	font-size: .8em;
 }
+a:link{
+	color:#FF0000 ;
+}
+a:hover{
+	color:#5aff00;
+}
+section>section{
+	color:blue;
+}
+
+	
