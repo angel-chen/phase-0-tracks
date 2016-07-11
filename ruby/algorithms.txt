@@ -1,0 +1,68 @@
+* Using an Elevator *
+- If inside elevator: 
+	- Lift arm
+	- Press button for floor
+	- Wait for doors to close and elevator moves
+
+- If outside elevator:
+	- Press up/down button.
+	- Wait for elevator doors to open
+	- Walk into elevator
+	- Lift arm
+	- Press button for floor
+	- Wait for doors to close and elevator moves
+
+- If elevator doors open:
+	- Check floor.  
+		- If incorrect, stay in elevator
+	- Get out of elevator if correct floor
+
+
+* Taking a Shower *
+- Walk into bathroom
+- Take off clothes and throw into hamper
+- For any non-waterproof items:
+	- Remove watch
+	- Remove jewelery
+	- Remove elastic hairbands
+- If not washing hair: 
+	- Tie hair up into bun
+- Take towel off rack and place next to shower for easy access
+- Open shower door
+- Adjust water temperature 
+	- Turn on hot water all the way
+	- Turn on cold water until water is warm
+- Close shower door
+- Take shower head off hook
+- If washing hair: 
+	- Thoroughly wet hair
+	- Put shower head back on hook
+	- Open bottle of shampoo.
+	- Squeeze out a quarter sized amount of shampoo
+	- Close bottle of shampoo
+	- Lather into hair
+	- Rinse hair
+	- Open bottle of conditioner
+	- Squeze out quarter sized amount of conditioner
+	- Rub through hair
+	- Use comb to distribute conditioner thoroughly
+	- Tie hair up into bun
+- Wet body
+- Put shower head back on hook
+- Pick up shower puff
+- Dispense shower gel onto shower puff
+- Rub shower puff against hand to work into lather
+- Scrub shower puff across body until thoroughly covered in soap
+- Take shower head off hook
+- Wash off soap
+- If washing hair: 
+	- Take hair out of bun
+	- Rinse conditioner out of hair
+- Turn off shower
+- If hair is wet: 
+	- Twist hair to squeeze out as much excess water as possible
+- Open shower door
+- Pick up towel
+- Wipe off body
+- If hair is wet: 
+	- Scrub towel over hair
