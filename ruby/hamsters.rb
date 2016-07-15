@@ -1,10 +1,19 @@
 puts "What is the hamster's name?"
-hamster_name = gets.chomp
+hamster_name = gets.chomp.capitalize
+squeaking = nil
 
 if hamster_name.empty? 
-	name = nil
-	puts "What is the hamster's squeaking volume? (1-10)"
-	squeaking = gets.chomp.to_i
+	hamster_name = nil
+
+	loop do 
+		puts "What is the hamster's squeaking volume? (1-10)"
+		squeaking = gets.chomp.to_i
+
+		if squeaking <10
+			break
+		end
+
+	end
 
 	puts "What is the hamster's fur color?"
 	fur_color = gets.chomp
@@ -16,8 +25,16 @@ if hamster_name.empty?
 	age = gets.chomp.to_f
 
 else
-	puts "What is #{hamster_name}'s squeaking volume?"
-	squeaking = gets.chomp.to_i
+	
+	loop do 
+		puts "What is #{hamster_name} squeaking volume? (1-10)"
+		squeaking = gets.chomp.to_i
+
+		if squeaking <10
+			break
+		end
+
+	end
 
 	puts "What is #{hamster_name}'s fur color?"
 	fur_color = gets.chomp
@@ -33,6 +50,10 @@ end
 
 if squeaking == 0 
 	squeaking = nil
+end
+
+if fur_color.empty?
+	fur_color = nil
 end
 
 if adoption == 'yes' || adoption == 'y'
@@ -53,33 +74,28 @@ else
 	puts "Name: Need hamster name"
 end
 
-if squeaking < 10 && squeaking != nil
+if squeaking != nil
 	puts "Squeaking Volume: #{squeaking}"
 else 
-	puts "Need valid squeaking volume (1..10)"
+	puts "Volume: Need valid squeaking volume (1..10)"
 end
 
 if fur_color != nil
 	puts "Fur color: #{fur_color}"
 else 
-	puts "Need fur color"
+	puts "Fur color: Need fur color"
 end
 
 if adoption
 	puts "Adoptable: Yes"
-elsif !adoption
+elsif adoption == false
 	puts "Adoptable: No"
 else
-	puts "Need more info"
+	puts "Adoptable: Need more information"
 end
 
 if age != nil 
 	puts "Hamster Age: #{age}"
 else 
-	puts "Need age" 
+	puts "Age: Need age" 
 end
-
-
-
-
-
