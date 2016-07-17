@@ -5,14 +5,15 @@
 #- Shift every letter 1 letter backwards in alphabet
 
 
-secret = "pot helm"
-
 def encryption (x)
 	size = 0
 
 	while size < x.length	
 		if x[size].match(/\s/)
 			puts x[size]
+			size+=1
+		elsif x[size].match("z")
+			puts "a"
 			size+=1
 		else	
 		puts x[size].next
@@ -21,15 +22,22 @@ def encryption (x)
 	end
 end
 
-puts encryption(secret)
 
 def decryption (x)
 	size = 0
 	while size < x.length
-		puts (x[size].ord-1).chr
-		size+=1
+		if x[size].match("a")
+			puts "z"
+			size+=1
+		else
+			puts (x[size].ord-1).chr
+			size+=1
+		end
 	end
 
 end
 
-puts decryption(secret)
+encryption("abc")
+encryption("zed")
+decryption("bcd")
+decryption("afe")
