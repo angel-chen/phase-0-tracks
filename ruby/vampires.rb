@@ -76,4 +76,6 @@ while employ_num !=0
 		puts "Results inconclusive"
 		employ_num -= 1
 	end
+
+	puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 end
