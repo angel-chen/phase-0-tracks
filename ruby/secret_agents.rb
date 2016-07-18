@@ -1,8 +1,20 @@
-#- Create method for encryption
-#- Shift every letter 1 letter forward in alphabet
+#Logan Graves and Angel Chen
 
-#- Create method to reverse encryption, make decryption
-#- Shift every letter 1 letter backwards in alphabet
+=begin
+Create method for encryption
+-Create variable for amount of letters.
+-Find length of word
+-Loop until all letters of the word have been encrypted
+-Skip spaces and print them
+-Print encryption
+
+Create method to reverse encryption, make decryption
+-Create variable for the amount of letters
+-Find the length of the word
+-Loop until all of the letters have been decrypted
+
+=end
+
 
 
 def encryption (str)
@@ -45,3 +57,6 @@ p encryption("zed")
 p decryption("bcd")
 p decryption("afe")
 p decryption(encryption("swordfish"))
+
+=begin The nested method works because the first method passes along a string value to the second method. There are no variables called from within either method to the other so there are no conflicts.
+=end
