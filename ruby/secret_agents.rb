@@ -5,39 +5,43 @@
 #- Shift every letter 1 letter backwards in alphabet
 
 
-def encryption (x)
+def encryption (str)
 	size = 0
 
-	while size < x.length	
-		if x[size].match(/\s/)
-			puts x[size]
+	while size < str.length	
+		if str[size].match(/\s/)
+			str[size]
 			size+=1
-		elsif x[size].match("z")
-			puts "a"
+		elsif str[size].match("z")
+			str[size] ="a"
 			size+=1
 		else	
-		puts x[size].next
+		str[size].next
 		size+=1
 		end
-	end
+	end	
+	str
 end
 
-
-def decryption (x)
+def decryption (str)
+	
 	size = 0
-	while size < x.length
-		if x[size].match("a")
-			puts "z"
+	
+	while size < str.length
+		if str[size].match("a")
+			str[size] = "z"
 			size+=1
 		else
-			puts (x[size].ord-1).chr
+			(str[size].ord-1).chr
 			size+=1
 		end
+		
 	end
-
+	str
 end
 
-encryption("abc")
-encryption("zed")
-decryption("bcd")
-decryption("afe")
+p encryption("abc")
+p encryption("zed")
+p decryption("bcd")
+p decryption("afe")
+p decryption(encryption("swordfish"))
