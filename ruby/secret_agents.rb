@@ -80,7 +80,6 @@ end
 #DRIVER CODE
 
 #Loops and asks user for encrypt or decrypt until it receives the proper input.
-
 puts "Do you want to encrypt or decrypt?"
 
 password_action = gets.chomp
@@ -90,10 +89,12 @@ until password_action.downcase == "encrypt" || password_action == "decrypt"
 	password_action = gets.chomp
 end
 
+#Prompts for password
 puts "What is your password?"
 
 password = gets.chomp
 
+#Select method based on user input
 if password_action == "encrypt"
 	encryption(password)
 elsif password_action == "decrypt"
