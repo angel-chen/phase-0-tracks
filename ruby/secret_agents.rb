@@ -1,43 +1,62 @@
-#- Create method for encryption
-#- Shift every letter 1 letter forward in alphabet
+#Logan Graves and Angel Chen
 
-#- Create method to reverse encryption, make decryption
-#- Shift every letter 1 letter backwards in alphabet
+=begin
+Create method for encryption
+-Create variable for amount of letters.
+-Find length of word
+-Loop until all letters of the word have been encrypted
+-Skip spaces and print them
+-Print encryption
+
+Create method to reverse encryption, make decryption
+-Create variable for the amount of letters
+-Find the length of the word
+-Loop until all of the letters have been decrypted
+
+=end
 
 
-def encryption (x)
+
+def encryption (str)
 	size = 0
 
-	while size < x.length	
-		if x[size].match(/\s/)
-			puts x[size]
+	while size < str.length	
+		if str[size].match(/\s/)
+			str[size]
 			size+=1
-		elsif x[size].match("z")
-			puts "a"
+		elsif str[size].match("z")
+			str[size] ="a"
 			size+=1
 		else	
-		puts x[size].next
+		str[size].next
 		size+=1
 		end
-	end
+	end	
+	str
 end
 
-
-def decryption (x)
+def decryption (str)
+	
 	size = 0
-	while size < x.length
-		if x[size].match("a")
-			puts "z"
+	
+	while size < str.length
+		if str[size].match("a")
+			str[size] = "z"
 			size+=1
 		else
-			puts (x[size].ord-1).chr
+			(str[size].ord-1).chr
 			size+=1
 		end
+		
 	end
-
+	str
 end
 
-encryption("abc")
-encryption("zed")
-decryption("bcd")
-decryption("afe")
+p encryption("abc")
+p encryption("zed")
+p decryption("bcd")
+p decryption("afe")
+p decryption(encryption("swordfish"))
+
+=begin The nested method works because the first method passes along a string value to the second method. There are no variables called from within either method to the other so there are no conflicts.
+=end
