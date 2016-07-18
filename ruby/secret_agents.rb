@@ -1,6 +1,13 @@
 #Logan Graves and Angel Chen
 
 =begin
+Password encryption and decryption interface for Users
+-Ask user whether they want to encrypt or decrypt 
+-Check if user specified encryption or decryption
+-Ask user for Password
+-Conduct encryption or decryption based on earlier input
+-Print result to screen
+
 Create method for encryption
 -Create variable for amount of letters.
 -Find length of word
@@ -16,47 +23,81 @@ Create method to reverse encryption, make decryption
 =end
 
 
+#METHOD DECLARATIONS
 
-def encryption (str)
+#Encrypts input
+def encryption (x)
 	size = 0
-
-	while size < str.length	
-		if str[size].match(/\s/)
-			str[size]
+	#Loops until all letters are encrypted
+	while size < x.length	
+		#Checks for blank spaces match. Then prints space. Moves to next index.
+		if x[size].match(/\s/)
+			print x[size]
 			size+=1
-		elsif str[size].match("z")
-			str[size] ="a"
+		#Checks for match to z. Adds conditional change to proper result. Moves to next index.
+		elsif x[size].match("z")
+			print x[size] = "a"
 			size+=1
+		#Prints next letter. Moves to next index.
 		else	
-		str[size].next
-		size+=1
+			print x[size].next
+			size+=1
 		end
 	end	
-	str
+	#Adds a new line.
+	print "\n"
 end
 
-def decryption (str)
+
+#Decrypts Input
+def decryption (x)
 	
 	size = 0
-	
-	while size < str.length
-		if str[size].match("a")
-			str[size] = "z"
+	#Loops until all letters are decrypted.
+	while size < x.length
+		#Checks for match to a. Adds conditional change to proper result. Moves to next index.
+		if x[size].match("a")
+			print x[size] = "z"
 			size+=1
+		#Prints previous letter. Moves to next index.
 		else
-			(str[size].ord-1).chr
+			print (x[size].ord-1).chr
 			size+=1
-		end
-		
+		end	
 	end
-	str
+	print "\n"
 end
 
-p encryption("abc")
-p encryption("zed")
-p decryption("bcd")
-p decryption("afe")
-p decryption(encryption("swordfish"))
+#encryption("abc")
+#encryption("zed")
+#decryption("bcd")
+#decryption("afe")
+#decryption(encryption("swordfish"))
 
-=begin The nested method works because the first method passes along a string value to the second method. There are no variables called from within either method to the other so there are no conflicts.
+=begin The nested method does not work because it cannot call the value from within the inner method and use it within the outer method.
 =end
+
+#DRIVER CODE
+
+#Loops and asks user for encrypt or decrypt until it receives the proper input.
+puts "Do you want to encrypt or decrypt?"
+
+password_action = gets.chomp
+
+until password_action.downcase == "encrypt" || password_action == "decrypt"
+	puts "Did you mean encrypt or decrypt?"	
+	password_action = gets.chomp
+end
+
+#Prompts for password
+puts "What is your password?"
+
+password = gets.chomp
+
+#Select method based on user input
+if password_action == "encrypt"
+	encryption(password)
+elsif password_action == "decrypt"
+	decryption(password)
+end
+
