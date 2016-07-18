@@ -18,6 +18,16 @@ while employ_num !=0
 	puts "Would you like to enroll in the company’s health insurance? (Y/N)"
 		insurance = gets.chomp.downcase
 
+	loop do
+		puts "Please name any allergies"
+		allergies = gets.chomp.downcase
+
+		if allergies == "sunshine"
+			allergies = true
+			break
+		end
+	end
+
 	current = 2016
 	age_test = current - birth_year
 
@@ -58,6 +68,9 @@ while employ_num !=0
 		employ_num -= 1
 	elsif name_test == true
 		puts "Definitely a vampire"
+		employ_num -= 1
+	elsif allergies == true
+		puts "Probably a vampire"
 		employ_num -= 1
 	else
 		puts "Results inconclusive"
