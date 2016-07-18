@@ -26,52 +26,55 @@ Create method to reverse encryption, make decryption
 #METHOD DECLARATIONS
 
 #Encrypts input
-def encryption (str)
+def encryption (x)
 	size = 0
 	#Loops until all letters are encrypted
-	while size < str.length	
+	while size < x.length	
 		#Checks for blank spaces match. Then prints space. Moves to next index.
-		if str[size] == " "
-			str[size]
+		if x[size].match(/\s/)
+			print x[size]
+			size+=1
 		#Checks for match to z. Adds conditional change to proper result. Moves to next index.
-		elsif str[size].match("z")
-			str[size] ="a"
+		elsif x[size].match("z")
+			print x[size] = "a"
+			size+=1
 		#Prints next letter. Moves to next index.
 		else	
-			str[size].next
+			print x[size].next
+			size+=1
 		end
-		size+=1
 	end	
-	str
+	#Adds a new line.
+	print "\n"
 end
 
+
 #Decrypts Input
-def decryption (str)
+def decryption (x)
 	
 	size = 0
 	#Loops until all letters are decrypted.
-	while size < str.length
+	while size < x.length
 		#Checks for match to a. Adds conditional change to proper result. Moves to next index.
-		if str[size].match("a")
-			str[size] = "z"
+		if x[size].match("a")
+			print x[size] = "z"
 			size+=1
 		#Prints previous letter. Moves to next index.
 		else
-			(str[size].ord-1).chr
+			print (x[size].ord-1).chr
 			size+=1
-		end
-		
+		end	
 	end
-	str
+	print "\n"
 end
 
-p encryption("abc")
-p encryption("zed")
-#p decryption("bcd")
-#p decryption("afe")
-#p decryption(encryption("swordfish"))
+#encryption("abc")
+#encryption("zed")
+#decryption("bcd")
+#decryption("afe")
+#decryption(encryption("swordfish"))
 
-=begin The nested method works because the first method passes along a string value to the second method. There are no variables called from within either method to the other so there are no conflicts.
+=begin The nested method does not work because it cannot call the value from within the inner method and use it within the outer method.
 =end
 
 #DRIVER CODE
@@ -92,8 +95,8 @@ puts "What is your password?"
 password = gets.chomp
 
 if password_action == "encrypt"
-	p encryption(password)
+	encryption(password)
 elsif password_action == "decrypt"
-	p decryption(password)
+	decryption(password)
 end
 
