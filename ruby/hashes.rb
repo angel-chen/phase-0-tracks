@@ -17,7 +17,7 @@ puts "Enter client's last name."
 client_details[:lname] = gets.chomp.capitalize
 
 puts "Enter client's age."
-client_details[:age] = gets.chomp
+client_details[:age] = gets.chomp.to_i
 
 puts "Enter number of children."
 client_details[:num_child] = gets.chomp.to_i
@@ -31,6 +31,14 @@ client_details[:wall_paint] = gets.chomp
 puts "Enter client's budget."
 client_details[:budget] = gets.chomp.to_f
 
+
+if client_details[:wall_paint]=="wallpaper"
+	puts "Enter pattern of wallpaper. (Chevron, Polka dots, Stars, etc)"
+	client_detail[:wallpaper] = gets.chomp
+else
+	puts "Enter color of wallpaint."
+	client_detail[:paint] = gets.chomp
+end
 
 
 p client_details
