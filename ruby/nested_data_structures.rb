@@ -38,7 +38,7 @@ closet = {
 			'Express',
 			'American Eagle'
 		]
-	}
+	},
 	hooks: {
 		total_hooks: 12,
 		items: {
@@ -67,3 +67,24 @@ closet = {
 		]
 	}
 }
+
+#Check contents of shoe rack
+#closet[:shoe_rack][:items]
+
+#Check brands of clothing in drawer
+#closet[:drawer][:brand]
+
+#Add brand of clothing to drawer
+#closet[:drawer][:brand].push("Armani Exchange")
+
+#Change all brand names to lowercase in shelf
+#closet[:shelf][:brand][1]
+
+#Print out number of types of shoes
+closet[:shoe_rack][:items].each do |item|
+	if item.class == Hash 
+		item.each do|type, qty|
+			print "I have #{qty} pair/pairs of #{type}"
+		end
+	end
+end
