@@ -1,13 +1,13 @@
 
  def search_array(ary, num) #take an array and target number
-   i = 0  #intitialize an incrementor to 0
+   i = 0  #initialize an incrementor to 0
    while i <= ary.length-1 #run loop for every element in the array
      if ary[i] == num #if the target is identified 
        return i # return where in the array the target was
      end
      i += 1 #increment the counter
    end 
-   return nil #if tagete is not found return nil
+   return nil #if target is not found return nil
  end
  
 #Calculate Fibonacci Sequence
@@ -23,7 +23,7 @@
 #From current position in sequence, add previous number and number before that to get new value
         ray<<ray[i-1]+ray[i-2]
       end
-#Increase counter      
+#Increment counter      
       i += 1
     end
 #Show array   
@@ -76,7 +76,7 @@ ary = [0, 3, 4, -7, -12]
 # p search_array(ary, 15)
 # check_ary =  fib(100)
 #if check_ary[-1] == 218922995834555169026
-#  p"Success!!"
+#p "Success!!"
 #end
 #p bubble_sort(ary)      
       
