@@ -47,6 +47,27 @@ class Puppy
 
 end
 
+class Kitten
+  def initialize
+    puts "Initializing new kitten instance..."
+  end
+  
+  def knock_over(object)
+    puts "I knocked over a #{object}"
+    object
+  end
+  
+  def clean
+    puts "*cleans itself*"
+  end
+  
+  def hairball 
+    puts "*coughs up a hairball*"
+  end
+  
+end
+
+
 ## DRIVER CODE
 
 new_puppy = Puppy.new
@@ -56,4 +77,7 @@ new_puppy.roll_over
 p new_puppy.dog_years(28)
 new_puppy.play_dead
 
+new_kitten = Kitten.new
+new_kitten.knock_over("cup")
+new_kitten.clean
 
