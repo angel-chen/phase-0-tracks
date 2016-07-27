@@ -1,3 +1,6 @@
+#GPS 2.2
+#Worked with Nan Min
+
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps: 
@@ -23,7 +26,7 @@
 # output:hash
 
 # Method to print a list and make it look pretty
-# input: our wondeful hash
+# input: our wonderful hash
 # steps: iterate through the hash
 # output: all the key-value pairs.
 
@@ -80,3 +83,13 @@ print_list(shopping_list)
 update_quantity("No-cream", 2, shopping_list)
 
 p shopping_list
+
+=begin
+  
+The pseudocode certainly helped a lot in creating the methods though I wouldn't quite use the format we were provided. We had to use a hash to store the values, but had to create the hash inside the initial list creation method. Because of that, we were uanble to use the hash for the methods that followed. When we had to pass the value for every method call. 
+
+A method returns the evaluation of the code placed into it. Other methods can be passed to each other. In order to pass information between methods, we had to make sure to pass the hash used to create the initial list.
+
+This challenge did push the fact that pseudocode makes the actual coding a lot easier. I'm still not completely comfortable with hashes and arrays yet, but I hope to solidify that knowledge through more practice.
+  
+end
