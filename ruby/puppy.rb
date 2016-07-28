@@ -81,3 +81,17 @@ new_kitten = Kitten.new
 new_kitten.knock_over("cup")
 new_kitten.clean
 
+kitten_array = []
+
+50.times do |x| 
+  kitten_array << Kitten.new
+end
+
+p kitten_array
+
+kitten_array.each do |kitten| 
+  kitten.knock_over("cup")
+  kitten.clean
+  kitten.hairball
+end
+
