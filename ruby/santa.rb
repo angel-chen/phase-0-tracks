@@ -42,11 +42,10 @@ new_santa.celebrate_birthday
 new_santa.get_mad_at("Vixen")
 p new_santa.reindeer_ranking
 
-p new_santa.gender = "transgender"
+new_santa.gender = "transgender"
+p new_santa.gender
 p new_santa.age
 p new_santa.ethnicity
-
-
 
 
 #Array for Santas
@@ -58,6 +57,13 @@ gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/
 #Array for different ethnicities
 ethnicities = ["Italian", "Latino", "Greek", "Japanese-African", "prefer not to say", "Unicorn", "N/A"]
 
-gender.length.times do |i|
-  santas << Santa.new(gender[i], ethnicities[i])
+50.times do 
+  santas << Santa.new(gender.sample, ethnicities.sample)
 end
+
+
+santas.each do |santa|
+	santa.age = rand(0..140)
+end
+
+p santas
