@@ -1,4 +1,7 @@
 class Santa
+	attr_reader :ethnicity, :reindeer_ranking
+	attr_accessor :gender, :age
+
 	def initialize (gender, ethnicity)
 		puts "Initializing Santa instance..."
 		@gender = gender
@@ -24,24 +27,8 @@ class Santa
 			@reindeer_ranking.delete(reindeer)
 			@reindeer_ranking << reindeer
 		end
-
 	end
 
-	def gender=(new_gender)
-		@gender = new_gender
-	end
-
-	def age
-		@age
-	end
-
-	def ethnicity
-		@ethnicity
-	end
-
-	def reindeer_ranking
-		@reindeer_ranking
-	end
 end
 
 #New instance of Santa class
@@ -74,5 +61,3 @@ ethnicities = ["Italian", "Latino", "Greek", "Japanese-African", "prefer not to 
 gender.length.times do |i|
   santas << Santa.new(gender[i], ethnicities[i])
 end
-
-p santas
