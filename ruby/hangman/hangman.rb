@@ -1,3 +1,41 @@
+=begin
+Angel Chen 
+6.6 Solo Challenge	
+
+Name class Hangman
+Use driver code - no interface needed
+
+On Initialization
+	-Set variable for word to be guessed
+	-Set default variable for game over to be false
+	-Set guess count to word length
+	-Set array for guessed letters
+
+Hiding Word
+	-Get user word and set to lowercase
+	-Change word to underscore with spaces
+
+Guessing Word
+	-Check user entered guess against word
+	-Send guessed letter into guessed letter array
+	-If guessed letter is in word, replace underscore
+	-Subtract guess count if guessed letter is wrong
+	-If guessed letter is already in guessed letter array, ask for another letter but do not increase guess count
+	-Game is lost if guesses are more than word length
+
+Interface
+-User can enter a word
+-Word is replaced with _ _ _ _ _ _ _ depending on length of word at beginning of game (unicorn)
+	-Letters start appearing when correct (_ _ _ c _ _ _) - letter C
+-Another user attempts to guess
+-Number of guesses limited to length of the word
+-Guesses stored in array
+-Repeated guesses do not count against the user
+-Congratulatory message if they win - You are clearly a word guessing genius
+-Taunting message if they lose - Better luck next time, loser.
+	
+=end
+	
 class Hangman
 	attr_reader :is_over, :guess_count, :hidden, :guess
 	attr_accessor :word, :guessed_letters
