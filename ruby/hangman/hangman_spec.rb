@@ -4,7 +4,7 @@ describe Hangman do
 	let(:game) { Hangman.new("unicorn")}
 
 	it "turns word into series of underscores separated by spaces" do 
-		expect(game.hide_word.join(" ")).to eq "_ _ _ _ _ _ _"
+		expect(game.hide_word).to eq "_ _ _ _ _ _ _"
 	end
 
 	it "changes underscore into correctly guessed letter" do
