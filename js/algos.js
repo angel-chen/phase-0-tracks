@@ -7,7 +7,8 @@ Longest Phrase
 Find a Key-Value Match
 -Declare variables Steve and Tamir
 -Create function that takes 2 variables
--Loop through values in both variables
+-Start with first variable and match against values on other object
+-Repeat on 2nd object
 -Match on key-value pair
 -Return true if there's a match
 -Return false if there isn't
@@ -30,5 +31,13 @@ function longestPhrase (phrase) {
 	return longPhrase;
 }
 
+
+function keyValueMatch (val1, val2){
+	for (var i = 0; i < Steve.length; i++){
+		if (Steve.key)
+	}
+}
+
+//DRIVER CODE
 console.log(longestPhrase(phrase));
 
