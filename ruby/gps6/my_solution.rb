@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Per Ohrstrom].
+# We spent [2] hours on this challenge.
 
 # EXPLANATION OF require_relative
 # require uses the current directory that you're running the program from
@@ -32,7 +32,7 @@ class VirusPredictor
 
 private
 
-# passes three variables and calulcates numbers of death based on if/elsif/else scenarios
+# passes three variables and calculates numbers of deaths based on if/elsif/else scenarios
 # prints out the state and the number of deaths
   def predicted_deaths
     # predicted deaths is solely based on population density
@@ -111,3 +111,22 @@ STATE_DATA.each do |state, pop_info|
 
 #=======================================================================
 # Reflection Section
+=begin
+What are the differences between the two different hash syntaxes shown in the state_data file?
+On the first level hash, it uses a string as the key, probably because it would look better when displayed. In the second level, symbols are used.
+
+What does require_relative do? How is it different from require?
+Require relative uses the directory where the program resides. It doesn't necessarily have to be in the same folder. Adjacent is fine too. 
+
+Require uses the current directory that you're running the program from. General rule of thum is to reserve 'require' for external files. A longer file pass has to be provided and it is generally used to pull in specific modules.
+
+What are some ways to iterate through a hash?
+Using .each or .map are some ways to iterate through a hash.
+
+When refactoring virus_effects, what stood out to you about the variables, if anything?
+The variables were called multiple times. It was already called during initialization, so it wasn't necessary to call them again.
+
+What concept did you most solidify in this challenge?
+I have a better understanding of nested hashes now.
+  
+=end
