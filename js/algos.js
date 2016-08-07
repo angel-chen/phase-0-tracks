@@ -23,7 +23,7 @@ Generate Random Test Data
 	-Return array
 */
 
-/* Finds longest string in array */
+//Finds longest string in array
 function longestPhrase (phrase) {
 	var longestPhrase = 0;
 	var longPhrase = null;
@@ -34,10 +34,10 @@ function longestPhrase (phrase) {
 			longPhrase = phrase[i];
 		}
 	}
-	return longPhrase;
+	return 'Longest string is ' + '"' + longPhrase + '"';
 }
 
-/* Find key-value match between 2 different objects */
+//Find key-value match between 2 different objects
 function keyValueMatch (val1, val2){
 	for (var key in val1){
 		if (val1[key] == val2[key]) {
@@ -47,7 +47,7 @@ function keyValueMatch (val1, val2){
 	return false;
 }
 
-/* Generate an array with a specified length made up of of random characters */
+// Generate an array with a specified length made up of of random characters
 function makeWordArray(arraynum)
 {
 	var wordArray = [];
@@ -74,4 +74,16 @@ var Tamir = {name: "Tamir", age: 54};
 console.log(longestPhrase(phrase));
 console.log(keyValueMatch(Steve, Tamir));
 console.log(makeWordArray(5));
+console.log('===')
 
+//Create 10 sets of test data
+for (var i = 1; i < 11; i++) {
+	var arraySize = Math.floor((Math.random() * 8) + 1);
+	var testData = makeWordArray(arraySize);
+	var longWord = longestPhrase(testData);
+
+	console.log('Test Data #' + i)
+	console.log(testData);
+	console.log(longWord);
+	console.log('===')
+}
