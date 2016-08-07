@@ -21,6 +21,13 @@ Generate Random Test Data
 	-Use another loop that will create the random strings
 	-Push random string into empty array
 	-Return array
+
+Generate data 10 times
+	-Create loop to run 10 times
+	-Create variable to generate random length of array
+	-Create variable to call array creation function and take random length of array
+	-Create variable to feed array creation into longest word function
+	-Add separators for more readability
 */
 
 //Finds longest string in array
@@ -51,10 +58,9 @@ function keyValueMatch (val1, val2){
 function makeWordArray(arraynum)
 {
 	var wordArray = [];
-	var arrayLength = arraynum;
     var alphabet = "abcdefghijklmnopqrstuvwxyz";
     
-    for ( var i=0; i < arrayLength; i++) {
+    for ( var i=0; i < arraynum; i++) {
     	var text = "";
     	var wordLength = Math.floor((Math.random() * 10) + 1);
     	
@@ -77,7 +83,7 @@ console.log(makeWordArray(5));
 console.log('===')
 
 //Create 10 sets of test data
-for (var i = 1; i < 11; i++) {
+for (var i = 1; i <= 10; i++) {
 	var arraySize = Math.floor((Math.random() * 8) + 1);
 	var testData = makeWordArray(arraySize);
 	var longWord = longestPhrase(testData);
