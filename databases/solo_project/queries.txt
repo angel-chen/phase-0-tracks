@@ -1,0 +1,89 @@
+select * from doll_model;
+1|Tony|60|800.0|true|1
+2|Rheia|45|400.0|false|3
+3|Sist|45|400.0|false|4
+4|Williams|65|900.0|true|1
+5|Nana|30|300.0|true|1
+6|Lusis|45|400.0|false|4
+7|El|60|500.0|false|5
+8|Mondo|70|800.0|true|2
+
+sqlite> update doll_model set price = 750 where model = "Tony";
+sqlite> select * from doll_model;
+1|Tony|60|750.0|true|1
+2|Rheia|45|400.0|false|3
+3|Sist|45|400.0|false|4
+4|Williams|65|900.0|true|1
+5|Nana|30|300.0|true|1
+6|Lusis|45|400.0|false|4
+7|El|60|500.0|false|5
+8|Mondo|70|800.0|true|2
+
+sqlite> select * from doll_model, doll_company where doll_model.company_id = doll_company.id;
+1|Tony|60|750.0|true|1|1|Volks
+2|Rheia|45|400.0|false|3|3|Fairyland
+3|Sist|45|400.0|false|4|4|Alchemic Labo
+4|Williams|65|900.0|true|1|1|Volks
+5|Nana|30|300.0|true|1|1|Volks
+6|Lusis|45|400.0|false|4|4|Alchemic Labo
+7|El|60|500.0|false|5|5|Luts
+8|Mondo|70|800.0|true|2|2|Soom
+
+select m.model, m.price, c.company_name from doll_model as m, doll_company as c where m.company_id = c.id;
+
+Tony|750.0|Volks
+Rheia|400.0|Fairyland
+Sist|400.0|Alchemic Labo
+Williams|900.0|Volks
+Nana|300.0|Volks
+Lusis|400.0|Alchemic Labo
+El|500.0|Luts
+Mondo|800.0|Soom
+
+sqlite> delete from doll_model where model="Nana";
+sqlite> select * from doll_model;
+1|Tony|60|750.0|true|1
+2|Rheia|45|400.0|false|3
+3|Sist|45|400.0|false|4
+4|Williams|65|900.0|true|1
+6|Lusis|45|400.0|false|4
+7|El|60|500.0|false|5
+8|Mondo|70|800.0|true|2
+
+sqlite> select * from doll_model cross join doll_company;
+1|Tony|60|750.0|true|1|1|Volks
+1|Tony|60|750.0|true|1|2|Soom
+1|Tony|60|750.0|true|1|3|Fairyland
+1|Tony|60|750.0|true|1|4|Alchemic Labo
+1|Tony|60|750.0|true|1|5|Luts
+2|Rheia|45|400.0|false|3|1|Volks
+2|Rheia|45|400.0|false|3|2|Soom
+2|Rheia|45|400.0|false|3|3|Fairyland
+2|Rheia|45|400.0|false|3|4|Alchemic Labo
+2|Rheia|45|400.0|false|3|5|Luts
+3|Sist|45|400.0|false|4|1|Volks
+3|Sist|45|400.0|false|4|2|Soom
+3|Sist|45|400.0|false|4|3|Fairyland
+3|Sist|45|400.0|false|4|4|Alchemic Labo
+3|Sist|45|400.0|false|4|5|Luts
+4|Williams|65|900.0|true|1|1|Volks
+4|Williams|65|900.0|true|1|2|Soom
+4|Williams|65|900.0|true|1|3|Fairyland
+4|Williams|65|900.0|true|1|4|Alchemic Labo
+4|Williams|65|900.0|true|1|5|Luts
+6|Lusis|45|400.0|false|4|1|Volks
+6|Lusis|45|400.0|false|4|2|Soom
+6|Lusis|45|400.0|false|4|3|Fairyland
+6|Lusis|45|400.0|false|4|4|Alchemic Labo
+6|Lusis|45|400.0|false|4|5|Luts
+7|El|60|500.0|false|5|1|Volks
+7|El|60|500.0|false|5|2|Soom
+7|El|60|500.0|false|5|3|Fairyland
+7|El|60|500.0|false|5|4|Alchemic Labo
+7|El|60|500.0|false|5|5|Luts
+8|Mondo|70|800.0|true|2|1|Volks
+8|Mondo|70|800.0|true|2|2|Soom
+8|Mondo|70|800.0|true|2|3|Fairyland
+8|Mondo|70|800.0|true|2|4|Alchemic Labo
+8|Mondo|70|800.0|true|2|5|Luts
+
