@@ -1,0 +1,29 @@
+select businesses.*, reviews.*, users.*
+   ...> from businesses
+   ...> join reviews
+   ...> on reviews.business_id = businesses.id
+   ...> join users
+   ...> on users.id = reviews.user_id
+   ...> ;
+1|Grundy Hollow Wedding Chapel|1|4|Great pizza!|1|2|2|Angela|Jolie
+2|Amir's Towing|2|1|Aweful service.|2|1|1|Bradford|Pitt
+3|The Beagle Night Club|3|3|Nice music, but the steak wasn't cooked well.|3|3|3|Steven|Wonder
+
+sqlite> select users.fname, users.lname, businesses.name, reviews.stars, reviews.comment
+   ...> from businesses
+   ...> join reviews
+   ...> on reviews.business_id = businesses.id
+   ...> join users
+   ...> on users.id = reviews.user_id;
+Angela|Jolie|Grundy Hollow Wedding Chapel|4|Great pizza!
+Bradford|Pitt|Amir's Towing|1|Aweful service.
+Steven|Wonder|The Beagle Night Club|3|Nice music, but the steak wasn't cooked well.
+
+sqlite> select users.fname, users.lname, businesses.name, reviews.stars, reviews.comment
+   ...> from businesses
+   ...> join reviews
+   ...> on reviews.business_id = businesses.id
+   ...> join users
+   ...> on users.id = reviews.user_id
+   ...> where businesses.name = "Grundy Hollow Wedding Chapel";
+Angela|Jolie|Grundy Hollow Wedding Chapel|4|Great pizza!
