@@ -87,3 +87,13 @@ sqlite> select * from doll_model cross join doll_company;
 8|Mondo|70|800.0|true|2|4|Alchemic Labo
 8|Mondo|70|800.0|true|2|5|Luts
 
+sqlite> select company_name, doll_model.model from doll_company left outer join doll_model on doll_company.id = doll_model.company_id
+   ...> ;
+Volks|Tony
+Volks|Williams
+Soom|Mondo
+Fairyland|Rheia
+Alchemic Labo|Lusis
+Alchemic Labo|Sist
+Luts|El
+Dollzone|
