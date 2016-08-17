@@ -5,6 +5,7 @@
 	-Create table to join company and item table along with storing possible selling price
 	-Create method to search through items
 	-Create method to add items
+	-Create method to edit items
 	-Create method to delete items
 	-Create method to display all items with company info and possible selling price
 	-Create user interface to ask user to search/add/delete/display all items
@@ -59,6 +60,28 @@ inventory_list = <<-SQL
 	select c.varchar, c.boolean, i.item_name, i.item_desc, i.size, i.selling, a.seqing 
 SQL
 
+def inventory_view
+	db.execute(inventory_list)
+end
+
+def item_search
+
+end
+
+def item_add
+
+end
+
+def item_edit
+
+end
+
+def item_delete
+
+end
+
 #DRIVER CODE
+
+
 
 #USER INTERFACE
