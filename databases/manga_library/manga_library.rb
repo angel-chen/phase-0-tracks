@@ -47,10 +47,44 @@ def display(db)
 	db.execute(display_all_manga)
 end
 
+def add_to_library(db, title, author, volume, complete, publisher_id)
+	add_library = <<-SQL
+		INSERT INTO manga (title, author, volume, complete, publisher_id) VALUES (?, ?, ?, ?, ?)
+	SQL
+
+	db.execute(add_to_library)
+end
+
+def search(db,title)
+	search_manga = <<-SQL
+		SELECT title, author, volume FROM manga WHERE title = (?)
+	SQL
+
+	db.execute(search_manga)
+end
+
+def edit_library(db, title)
+	edit = <<-SQL 
+		UPDATE manga (title, author, volume, complete, publisher_id) set title = (?)
+	SQL
+
+	db.execute(edit_library)
+end
+
+def delete_from_library(db, title)
+	library_delete = <<-SQL
+		DELETE from manga where title = (?)
+	SQL
+
+	db.execute(delete_from_library)
+end
 
 #DRIVER CODE
 p display(db)
-
+p add_to_library(db,"Demon Diary", "Kara", 1, "true", 3)
+p search(db,"Demon Diary")
+p edit_library 
+p delete_from_library(db, "Demon Diary")
 
 #add test company
 # db.execute("INSERT INTO publisher (publisher) VALUES ('Viz')")
