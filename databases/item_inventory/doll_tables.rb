@@ -18,8 +18,8 @@ SQL
 create_item_table = <<-SQL
  	CREATE TABLE IF NOT EXISTS item (
 	  	id INTEGER PRIMARY KEY,
-		clothing_name VARCHAR(255), 
-		clothing_desc BLOB,
+		item_name VARCHAR(255), 
+		item_desc BLOB,
 		size INT,
 		selling BOOLEAN,
 		FOREIGN KEY (company_id) REFERENCES company(id)
