@@ -12,7 +12,6 @@ require 'sqlite3'
 
 # create SQLite3 database
 db = SQLite3::Database.new("manga.db")
-db.results_as_hash = true
 
 # create publisher table
 create_publisher_table = <<-SQL
@@ -39,7 +38,19 @@ SQL
 db.execute(create_publisher_table)
 db.execute(create_manga_table)
 
+# display all manga
+def display(db)
+	display_all_manga = <<-SQL
+		SELECT m.title, m.author, m.volume, m.complete, p.publisher from manga as m, publisher as p where m.publisher_id = p.id
+	SQL
+
+	db.execute(display_all_manga)
+end
+
+
 #DRIVER CODE
+p display(db)
+
 
 #add test company
 # db.execute("INSERT INTO publisher (publisher) VALUES ('Viz')")
@@ -50,7 +61,3 @@ db.execute(create_manga_table)
 #add test manga
 # db.execute("INSERT INTO manga (title, author, volume, complete, publisher_id) VALUES ('Demon Diary', 'Kara', 1, 'true', 3)")
 
-def 
-
-
-#USER INTERFACE
