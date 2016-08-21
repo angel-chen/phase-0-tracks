@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Book Cost</title>
+</head>
+<body>
+<h1>To find the cost of your books, please choose your campus:</h1>
+<form action="/students/book_cost" method="GET">
+	<select name="campuses">
+		<% @campus_db.each do |campus| %>
+		<option value="<%= campus['campus']%>"><%=campus['location']%></option>
+		<% end %>
+	</select>
+	<button type="submit">Submit</button>
+</form>
+<ul>
+<% @students_search.each do |student| %>
+	<li><%= student['name'] %>, <%= student['campus'] %>, <%= student['book_cost']%></li>
+    <% end %>
+</ul>
+ 	
+</body>
+</html>

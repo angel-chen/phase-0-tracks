@@ -6,11 +6,14 @@
 <body>
   <h1>Student Management System</h1>
   <p>Welcome to the student management system.</p>
+  <p>Click <a href="students/book_cost">here</a> to see your book cost.</p>
+  <p>Click <a href="students/new_campus">here</a> to add a new campus.</p>
   <p>Click <a href="students/new">here</a> to create a new student.</p>
   <ul>
     <% @students.each do |student| %>
       <li><%= student['name'] %>, <%= student['age'] %></li>
     <% end %>
   </ul>
+  
 </body>
 </html>
