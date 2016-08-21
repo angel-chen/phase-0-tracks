@@ -1,3 +1,6 @@
+# Angel Chen
+# Release 0: View HTTP Requests
+
 * What are some common HTTP status codes?
 	* HTTP request codes fall into 5 classes and are designated with a 3 digit numerical code. 
 		* Informational (1XX)
