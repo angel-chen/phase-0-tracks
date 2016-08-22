@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random jQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script>
+	$(document).ready(function () {
+
+    $(".slidingDiv").hide();
+    $(".show_hide").show();
+
+    $('.show_hide').click(function () {
+        $(".slidingDiv").toggle("slide").animate({
+	        opacity: '0.5',
+	        fontSize: '20px',
+	        padding: '40px 10px',
+	        height: '150px'
+    	}, "slow");;
+    });
+
+	});
+	</script>
+	
+</head>
+<body>
+
+<div class="show_hide">Make Text Box Appear and Reappear</div>
+<div class="slidingDiv">Animating the box 
+</div>
+
+
+	
+</body>
+</html>
