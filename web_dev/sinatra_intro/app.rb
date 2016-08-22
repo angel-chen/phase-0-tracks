@@ -48,7 +48,7 @@ end
 # write a GET route that displays an address
 
 get '/contact' do
-  "Address: 555 East 90th Street<br>City: New York<br>State: NY<br>Zip Code: 10128"
+  "Address: 555 East 90th Street<br>City, State, Zip: New York, NY 10128"
 end
 
 # write a GET route that prints "Good job" or "Good job (name)" if name is provided
@@ -66,6 +66,19 @@ end
 get '/:num_1/add/:num_2' do
   answer = params[:num_1].to_i + params[:num_2].to_i
 
-  "#{params[:num_1]} + #{params[:num2]} = #{answer.to_s}"
+  "#{answer.to_s}"
 end
 
+get '/filter/:age' do
+  age = params[:age]
+  age_search = db.execute("SELECT * FROM students WHERE age > #{age}")
+  response = ""
+
+  age_search.each do |name|
+    response << "ID: #{name['id']}<br>"
+    response << "Name: #{name['name']}<br>"
+    response << "Age: #{name['age']}<br>"
+    response << "Campus: #{name['campus']}<br><br>"
+  end
+  response
+end
