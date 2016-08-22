@@ -53,7 +53,7 @@ end
 
 # write a GET route that prints "Good job" or "Good job (name)" if name is provided
 
-get 'great_job' do
+get '/great_job' do
   name = params[:name]
     if name
       "Good job, #{name}!"
@@ -61,3 +61,11 @@ get 'great_job' do
       "Good job!"
     end
 end
+
+# write route that adds 2 numbers and respond with the result
+get '/:num_1/add/:num_2' do
+  answer = params[:num_1].to_i + params[:num_2].to_i
+
+  "#{params[:num_1]} + #{params[:num2]} = #{answer.to_s}"
+end
+
